@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop muted playsinline>
+  <source src="music.mp3.mpeg" type="audio/mpeg">
+</audio>
+
+<!-- INTRO SECTION -->
+<section id="intro" class="intro">
+  <h1>Happy Birthday, Jannu! 💖</h1>
+  <p>Today is all about celebrating you and the joy you bring to my life</p>
+
+  <div class="hearts">❤️ 💕 💖 💗 ❤️</div>
+
+  <button onclick="startCelebration()">Start the Celebration 🎉</button>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="hidden">
+  <h2>💝 Just for You 💝</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/1.jpeg"></div>
+        <div class="back">You make every day brighter 💖</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/2.jpeg"></div>
+        <div class="back">Your smile is my favorite 🥰</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/3.jpeg"></div>
+        <div class="back">So lucky to have you 💫</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/4.jpeg"></div>
+        <div class="back">You are pure magic ✨</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/5.jpeg"></div>
+        <div class="back">Every moment with you matters 💕</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/6.jpeg"></div>
+        <div class="back">You complete my world 🌍</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/7.jpeg"></div>
+        <div class="back">Grateful for you 💝</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/8.jpeg"></div>
+        <div class="back"> 🫂</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="inner">
+        <div class="front"><img src="images/9.jpeg"></div>
+        <div class="back">Happy Birthday 🎂</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* START BUTTON */
+function startCelebration() {
+  document.getElementById("intro").style.display = "none";
+  document.getElementById("gallery").classList.remove("hidden");
+
+  const music = document.getElementById("bgMusic");
+  music.muted = false;
+  music.play();
+}
+
+/* SEQUENTIAL FLIP */
+const cards = document.querySelectorAll(".card");
+let current = 0;
+
+cards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    if (index === current) {
+      card.classList.add("flipped");
+      current++;
+    }
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ffb6c1, #ffd1dc);
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* INTRO */
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.intro h1 {
+  font-size: 2.4rem;
+  color: #7a2e3a;
+}
+
+.intro p {
+  margin-top: 12px;
+  color: #6a4a4a;
+  font-size: 1.1rem;
+}
+
+.hearts {
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.intro button {
+  background: #ff6f91;
+  color: white;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* GALLERY */
+.hidden {
+  display: none;
+}
+
+#gallery {
+  padding: 20px;
+}
+
+#gallery h2 {
+  color: #7a2e3a;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* CARD STRUCTURE */
+.card {
+  perspective: 1000px;
+}
+
+.inner {
+  aspect-ratio: 3 / 4;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT & BACK */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* FRONT IMAGE */
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BACK MESSAGE */
+.back {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transform: rotateY(180deg);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
